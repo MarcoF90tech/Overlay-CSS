@@ -1,0 +1,112 @@
+/* ==================================================
+   css/components/_buttons.css - Botões e Estados Visuais
+   (Primary, Secondary, Tertiary, Hover, Focus, Disabled)
+   ================================================== */
+
+/* --- 1. ESTILO BASE COM ACESSIBILIDADE --- */
+.btn {
+    /* Reset básico */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+
+    /* Propriedades visuais */
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1; /* Alinhamento vertical consistente */
+    border: 2px solid transparent; /* Reserva espaço para borda em :focus */
+    white-space: nowrap; /* Evita quebras de linha em textos curtos */
+
+    /* Transições suaves para estados */
+    transition: background-color var(--transition-speed),
+                border-color var(--transition-speed),
+                color var(--transition-speed),
+                box-shadow var(--transition-speed);
+}
+
+/* Garante alto contraste em foco para acessibilidade */
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-background-body),
+                0 0 0 5px var(--color-primary-500);
+}
+
+
+/* --- 2. VARIAÇÃO PRINCIPAL (PRIMARY) --- */
+.btn-primary {
+    background-color: var(--color-primary-500);
+    color: var(--color-text-light); /* Texto claro para fundo escuro */
+    border-color: var(--color-primary-500); /* Borda com mesma cor de fundo */
+}
+
+/* Estados de Interação do Botão Primário */
+.btn-primary:hover {
+    background-color: var(--color-primary-700); /* Escurece no hover */
+    border-color: var(--color-primary-700);
+    box-shadow: var(--shadow-dark);
+}
+
+/* Estado de Desativado do Botão Primário */
+.btn-primary:disabled {
+    background-color: var(--color-neutral-400);
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-600);
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+
+/* --- 3. VARIAÇÃO SECUNDÁRIA (SECONDARY/OUTLINE) --- */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary-500);
+    border-color: var(--color-primary-500); /* Borda colorida */
+}
+
+/* Estados de Interação do Botão Secundário */
+.btn-secondary:hover {
+    background-color: var(--color-primary-100); /* Preenche ligeiramente */
+    color: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+}
+
+/* Estado de Desativado do Botão Secundário */
+.btn-secondary:disabled {
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-400);
+    background-color: transparent;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+
+/* --- 4. VARIAÇÃO TERCIÁRIA (TERTIARY/TEXT) --- */
+.btn-tertiary {
+    background-color: transparent;
+    color: var(--color-text-body);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm); /* Reduz o padding */
+    font-weight: 500;
+}
+
+/* Estados de Interação do Botão Terciário */
+.btn-tertiary:hover {
+    text-decoration: underline;
+    color: var(--color-primary-500);
+}
+
+/* Estado de Desativado do Botão Terciário */
+.btn-tertiary:disabled {
+    color: var(--color-neutral-500);
+    text-decoration: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.8;
+}
