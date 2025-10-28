@@ -1,0 +1,114 @@
+/* ==================================================
+   css/components/_alerts.css - Componentes de Feedback
+   (Alerts, Toasts, Modals)
+   ================================================== */
+
+/* --- 1. ESTILO BASE DOS ALERTS --- */
+.alert {
+    /* Utiliza Flexbox para alinhar conteúdo e botão de fechar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
+
+.alert-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--spacing-md);
+    line-height: 1;
+    margin-left: var(--spacing-sm);
+    color: inherit; /* Herda a cor do texto do alert */
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
+}
+
+.alert-close-btn:hover {
+    opacity: 1;
+}
+
+/* --- 2. VARIAÇÕES DE ALERTAS (Cores do Design System) --- */
+
+/* Alert de Sucesso */
+.alert-success {
+    color: #155724; /* Texto escuro no fundo claro */
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Alert de Erro/Perigo */
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Alert de Aviso/Warning */
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Alert de Informação */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* --- 3. TOASTS (Notificações Flutuantes - Exemplo de layout) --- */
+.toast-container {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1080; /* Alto z-index para ficar acima de tudo */
+    /* Flexbox para empilhar toasts */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.toast {
+    background-color: var(--color-background-body);
+    color: var(--color-text-body);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    /* Adicionar transform ou opacity para animação de entrada/saída */
+}
+
+/* --- 4. MODALS (Estrutura Básica) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none; /* Escondido por padrão, mostrado com JS */
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-background-body);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 90%;
+    z-index: 1050;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    display: none; /* Escondido por padrão, mostrado com JS */
+}
