@@ -1,0 +1,73 @@
+/* ==================================================
+   css/components/_badges.css - Badges e Tags para Categorização
+   ================================================== */
+
+.badge {
+    /* Utiliza Flexbox para garantir que o texto e ícones estejam centralizados */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Propriedades visuais */
+    padding: calc(var(--spacing-xs) / 2) var(--spacing-xs);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem; /* Menor que o border-radius global */
+    
+    margin-right: var(--spacing-xs); /* Espaçamento entre múltiplos badges */
+}
+
+/* Badge com bordas arredondadas (Pill) */
+.badge-pill {
+    border-radius: 9999px;
+}
+
+/* --- VARIAÇÕES DE COR DO BADGE --- */
+
+/* Badge Primário */
+.badge-primary {
+    color: var(--color-text-light);
+    background-color: var(--color-primary-500);
+}
+
+/* Badge Secundário */
+.badge-secondary {
+    color: var(--color-text-light);
+    background-color: var(--color-secondary-500);
+}
+
+/* Badge Sucesso */
+.badge-success {
+    color: var(--color-text-light);
+    background-color: var(--color-success);
+}
+
+/* Badge Warning */
+.badge-warning {
+    color: var(--color-neutral-900); /* Texto escuro no fundo amarelo */
+    background-color: var(--color-warning);
+}
+
+/* Badge Erro */
+.badge-error {
+    color: var(--color-text-light);
+    background-color: var(--color-error);
+}
+
+/* Exemplo de Tags interativas (como botões pequenos) */
+.tag-interactive {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+    border: 1px solid var(--color-border-default);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.tag-interactive:hover {
+    background-color: var(--color-primary-100);
+    border-color: var(--color-primary-500);
+}
