@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Layout CSS - [Seu Nome/Projeto]</title>
+    <link rel="stylesheet" href="css/main.css">
+    </head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Meu Logo</a>
+            <button class="hamburger-menu" aria-expanded="false" aria-label="Abrir Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Projetos ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Subitem 1</a></li>
+                        <li><a href="#">Subitem 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+
+        <section class="section-hero row">
+            <div class="col-12 col-lg-8">
+                <h1>Título Principal H1 (var(--font-size-h1))</h1>
+                <h2>Subtítulo H2</h2>
+                <p>Este layout utiliza o **CSS Grid** (classe `.row`) para a estrutura principal e **Flexbox** para componentes internos. As margens são definidas pelo **Sistema de Espaçamento Modular**.</p>
+                <button class="btn btn-primary">Botão Primário</button>
+                <button class="btn btn-disabled" disabled>Desativado</button>
+            </div>
+            <aside class="col-12 col-lg-4">
+                <div class="card card--info">
+                    <h3>Sidebar</h3>
+                    <p>Espaço para informações secundárias. <span class="badge badge-primary">Tag</span></p>
+                </div>
+            </aside>
+        </section>
+
+        <hr>
+
+        <section class="section-cards">
+            <h2>Sistema de Cards (Flexbox Interno)</h2>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card--project">
+                        <div class="card-content">
+                            <h4>Projeto A</h4>
+                            <p>Detalhes do projeto e categorização.</p>
+                            <span class="badge badge-success">Concluído</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card--project">
+                        <div class="card-content">
+                            <h4>Projeto B</h4>
+                            <p>Mais informações aqui.</p>
+                            <span class="badge badge-warning">Em Andamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-feedback">
+             <h2>Formulário Estilizado</h2>
+             <div class="alert alert-error" role="alert">
+                Atenção: Validação visual para o formulário.
+             </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" class="form-control" required>
+                    </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" class="form-control is-invalid" required>
+                    <p class="validation-feedback">Este campo é obrigatório.</p>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Layout CSS Modular.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.hamburger-menu').onclick = function() {
+            const nav = document.querySelector('.nav-links');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('is-open');
+        };
+    </script>
+</body>
+</html>
