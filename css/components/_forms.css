@@ -1,0 +1,91 @@
+/* ==================================================
+   css/components/_forms.css - Formulários Estilizados e Validação Visual
+   ================================================== */
+
+/* --- 1. ESTRUTURA BÁSICA DO FORMULÁRIO --- */
+.contact-form {
+    /* Utiliza o espaçamento modular para organizar o formulário */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--border-radius);
+    background-color: var(--color-neutral-100);
+}
+
+.form-group {
+    /* Utiliza Flexbox para organizar label e input em mobile/desktop */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* --- 2. ESTILO PADRÃO DOS CONTROLES (INPUTS, TEXTAREAS, SELECTS) --- */
+.form-control {
+    width: 100%;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--color-text-body);
+    background-color: var(--color-background-body);
+    background-clip: padding-box;
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-control:focus {
+    color: var(--color-text-body);
+    background-color: var(--color-background-body);
+    border-color: var(--color-primary-500);
+    outline: 0;
+    /* Efeito visual ao focar */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+}
+
+/* Estilo para labels */
+.form-group label {
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+/* --- 3. VALIDAÇÃO VISUAL (Feedback de Sucesso e Erro) --- */
+
+/* ESTADO INVÁLIDO (ERRO) */
+/* Aplica-se ao input com a classe `is-invalid` */
+.form-control.is-invalid {
+    border-color: var(--color-error);
+    padding-right: var(--spacing-lg); /* Espaço para ícone opcional */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'><circle cx='6' cy='6' r='4.5'/><path stroke-linecap='round' d='M5.875 3.375V6M5.875 8.625h.25'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Estilo para mensagem de feedback de erro */
+.validation-feedback {
+    display: block;
+    width: 100%;
+    margin-top: calc(var(--spacing-xs) / 2);
+    font-size: var(--font-size-small);
+    color: var(--color-error);
+}
+
+/* ESTADO VÁLIDO (SUCESSO) */
+/* Aplica-se ao input com a classe `is-valid` */
+.form-control.is-valid {
+    border-color: var(--color-success);
+    padding-right: var(--spacing-lg); /* Espaço para ícone opcional */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%2328a745'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 6l2 2 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* ESTADO DESABILITADO */
+.form-control:disabled {
+    background-color: var(--color-neutral-100);
+    opacity: 0.8;
+    cursor: not-allowed;
+}
