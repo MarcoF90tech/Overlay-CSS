@@ -16,5 +16,3 @@ Este projeto é um desenvolvimento universitário que implementa um **Design Sys
 | **Componentes de Feedback** | ✅ | Estruturas para Alerts, Toasts e Modals usando cores de feedback em `css/components/_alerts.css`. |
 | **Badges e Tags** | ✅ | Componentes de categorização usando as cores do Design System em `css/components/_badges.css`. |
 | **Estrutura Modular** | ✅ | Código organizado em pastas (`base`, `layout`, `components`, `utilities`) e importado via `css/main.css`. |
-
-## 📁 Estrutura do Repositório
