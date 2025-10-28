@@ -1,0 +1,167 @@
+/* ==================================================
+   css/components/_navbar.css - Navegação Sofisticada
+   (Menu Principal, Dropdown, Menu Hambúrguer)
+   ================================================== */
+
+/* --- 1. ESTILO BASE DA BARRA DE NAVEGAÇÃO (FLEXBOX) --- */
+.main-header {
+    background-color: var(--color-neutral-900);
+    box-shadow: var(--shadow-light);
+}
+
+.navbar {
+    /* Utiliza Flexbox para alinhar logo, botão e links horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+}
+
+.navbar .logo {
+    color: var(--color-text-light);
+    font-size: var(--font-size-h4);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- 2. MENU HAMBÚRGUER (EXIBIÇÃO APENAS EM MOBILE/SMALL SCREEN) --- */
+.hamburger-menu {
+    display: block; /* Visível por padrão em mobile */
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: var(--spacing-lg);
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima de outros elementos */
+    padding: var(--spacing-xs);
+}
+
+/* --- 3. LISTA DE LINKS (DESKTOP E MOBILE) --- */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Escondido por padrão em mobile */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do header */
+    left: 0;
+    background-color: var(--color-neutral-900);
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform var(--transition-speed) ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estado ativo do Menu Hambúrguer (via JS: .nav-links.is-open) */
+.nav-links.is-open {
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador em mobile */
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-links a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    color: var(--color-text-light);
+    transition: background-color var(--transition-speed);
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    background-color: var(--color-primary-700);
+}
+
+
+/* --- 4. SUBMENU DROPDOWN (Mobile First) --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-primary-700); /* Cor diferente para submenu em mobile */
+    display: none;
+    overflow: hidden;
+}
+
+/* Em mobile, o dropdown pode ser expandido por clique/JS */
+.dropdown:hover .dropdown-menu {
+    /* Em mobile, considere usar classes JS para toggle (Ex: .dropdown.is-open .dropdown-menu) */
+    /* Para demonstração simples, o hover não é ideal em touch, mas mostra a estrutura */
+}
+
+.dropdown-menu li {
+    border-bottom: none; /* Remove separador no submenu */
+}
+
+.dropdown-menu a {
+    padding-left: var(--spacing-lg); /* Recuo para subitens */
+    font-size: var(--font-size-small);
+}
+
+
+/* --- 5. BREAKPOINT PARA DESKTOP (MAIOR QUE 992px) --- */
+@media (min-width: 992px) {
+    .hamburger-menu {
+        display: none; /* Esconde o hambúrguer no desktop */
+    }
+
+    .nav-links {
+        /* Reverte para o comportamento Flexbox horizontal */
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        position: static;
+        background-color: transparent;
+        border-top: none;
+    }
+
+    .nav-links li {
+        border-bottom: none;
+        padding: 0 var(--spacing-xs); /* Espaçamento entre itens */
+    }
+    
+    .nav-links a {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background-color: transparent;
+    }
+
+    /* Dropdown no Desktop (Menu de fato 'caindo') */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 10rem;
+        background-color: var(--color-background-body);
+        border: 1px solid var(--color-border-default);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-light);
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Mostra o submenu ao passar o mouse */
+    }
+
+    .dropdown-menu a {
+        color: var(--color-text-body);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        white-space: nowrap; /* Evita quebra de linha nos itens */
+    }
+
+    .dropdown-menu a:hover {
+        background-color: var(--color-neutral-100);
+    }
+}
