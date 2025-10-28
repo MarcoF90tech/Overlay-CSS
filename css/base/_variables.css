@@ -1,0 +1,52 @@
+/* ====================================
+   css/base/_variables.css - Design System Consistente
+   ==================================== */
+
+:root {
+    /* --- 1. PALETA DE CORES (MÍNIMO DE 8 CORES) --- */
+    --color-primary-500: #007bff;   /* Primária Principal */
+    --color-primary-700: #0056b3;   /* Primária Escura (Hover) */
+    --color-secondary-500: #6c757d; /* Secundária Principal */
+    --color-secondary-700: #5a6268; /* Secundária Escura */
+    --color-success: #28a745;       /* Feedback Positivo */
+    --color-warning: #ffc107;       /* Alerta */
+    --color-error: #dc3545;         /* Feedback Erro */
+    --color-neutral-100: #f8f9fa;   /* Neutra Clara (Fundo Leve) */
+    --color-neutral-900: #212529;   /* Neutra Escura (Texto) */
+    --color-text-body: var(--color-neutral-900);
+    --color-background-body: #ffffff;
+    --color-border-default: #dee2e6;
+
+    /* --- 2. TIPOGRAFIA HIERÁRQUICA (MÍNIMO DE 5 TAMANHOS) --- */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-h1: 3.052rem;     /* 48.83px */
+    --font-size-h2: 2.441rem;     /* 39.06px */
+    --font-size-h3: 1.953rem;     /* 31.25px */
+    --font-size-h4: 1.563rem;     /* 25px */
+    --font-size-h5: 1.25rem;      /* 20px */
+    --font-size-small: 0.8rem;    /* 12.8px */
+
+    --font-family-primary: 'Helvetica Neue', Arial, sans-serif;
+
+    /* --- 3. SISTEMA DE ESPAÇAMENTO MODULAR (8px, 16px, 24px, 32px, 48px, 64px) --- */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+    --spacing-xxl: 4rem;    /* 64px */
+
+    /* --- 4. OUTRAS VARIÁVEIS --- */
+    --border-radius: 0.375rem;
+    --transition-speed: 0.2s;
+    --shadow-light: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Estilos de corpo básico (Importante para herança) */
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    color: var(--color-text-body);
+    background-color: var(--color-background-body);
+    line-height: 1.6;
+}
