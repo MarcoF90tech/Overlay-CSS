@@ -1,0 +1,26 @@
+/* ====================================
+   css/main.css - Arquivo Principal Modular
+   ==================================== */
+
+/* --- 1. BASE/DESIGN SYSTEM --- */
+@import url('./base/_variables.css'); /* Cores, Tipografia, Espaçamento */
+@import url('./base/_reset.css');     /* Normalize ou Reset */
+@import url('./base/_typography.css'); /* Estilos de H1-H5, P, etc. */
+
+/* --- 2. LAYOUT --- */
+@import url('./layout/_grid.css');    /* Grid 12 colunas e Breakpoints */
+@import url('./layout/_header.css');  /* Estilo do Header principal */
+@import url('./layout/_footer.css');  /* Estilo do Footer principal */
+@import url('./layout/_main.css');    /* Estilo do Main content */
+
+/* --- 3. COMPONENTES REUTILIZÁVEIS --- */
+@import url('./components/_buttons.css');  /* Botões com :hover, :focus, :active, :disabled */
+@import url('./components/_cards.css');    /* Sistema de Cards Responsivos (Flexbox) */
+@import url('./components/_navbar.css');   /* Navegação Sofisticada (Dropdown, Hamburger) */
+@import url('./components/_forms.css');    /* Formulários estilizados e validação visual */
+@import url('./components/_alerts.css');   /* Componentes de Feedback (Alerts, Toasts, Modals) */
+@import url('./components/_badges.css');   /* Badges e Tags para categorização */
+
+/* --- 4. UTILITIES --- */
+/* @import url('./utilities/_spacing.css'); */
+/* ... Outras utilidades ... */
